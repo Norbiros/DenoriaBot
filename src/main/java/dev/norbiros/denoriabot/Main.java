@@ -2,7 +2,7 @@ package dev.norbiros.denoriabot;
 
 import java.util.*;
 
-import org.bukkit.configuration.file.FileConfiguration
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
