@@ -1,6 +1,6 @@
 name: DenoriaBot
 version: ${project.version}
-main: deb.norbiros.denoriabot.Main
+main: dev.norbiros.denoriabot.Main
 
 prefix: DenoriaBOT
 authors: [Norbiros]
