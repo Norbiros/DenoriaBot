@@ -1,7 +1,7 @@
 name: DenoriaBot
 version: ${project.version}
-main: dev.norbiros.denoriabot.Main
+main: dev.norbiros.denoriabot.DenoriaBot
 
 prefix: DenoriaBOT
-authors: Norbiros
+authors: [Norbiros]
 description: This is plugin that creates discord bot for minecraft server denoria.pl!
