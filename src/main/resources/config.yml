@@ -4,3 +4,7 @@
 # W tym polu wpisz token bota
 # *Pamiętaj że token, jest tajny! Nie pokazuj go nikomu!*
 token: 
+
+# Tutaj podaj prefix bota (wszystkie komendy będą zaczynały się od tego znaku)
+# Aby uniknąć konfliktów - podaj unikatowy znak
+prefix: .
