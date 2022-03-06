@@ -17,9 +17,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 
 public class DenoriaBot extends JavaPlugin {
-  
+    private static DenoriaBot instance;
     @Override
     public void onEnable() {
+      instance = this;
       this.saveDefaultConfig();
       try {
         String BOT_TOKEN = this.getConfig().getString("token");
@@ -34,7 +35,12 @@ public class DenoriaBot extends JavaPlugin {
 
     @Override
     public void onDisable() {
+      instance = null;
       getLogger().info("Pomyślnie wyłączono plugin DenoriaBot!");
+    }
+
+    public static DenoriaBot getInstance(){
+      return instance;
     }
 
 }
