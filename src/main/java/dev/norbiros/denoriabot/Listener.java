@@ -17,14 +17,4 @@ public class Listener extends ListenerAdapter {
   public void onReady(ReadyEvent event) {
     DenoriaBot.getInstance().getLogger().info("Bot pomyślnie wystartował!");
   }
-
-  @Override
-  public void onMessageReceived(MessageReceivedEvent event) {
-    Message message = event.getMessage();
-    String content = message.getContentRaw(); 
-    if (content.equals("!ping")) {
-        MessageChannel channel = event.getChannel();
-        channel.sendMessage("Pong!").queue();
-    }
-  }
 }

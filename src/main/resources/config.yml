@@ -7,4 +7,5 @@ token:
 
 # Tutaj podaj prefix bota (wszystkie komendy będą zaczynały się od tego znaku)
 # Aby uniknąć konfliktów - podaj unikatowy znak
-prefix: .
+# Nie usuwaj "" ponieważ może to powodować bugi przy znakach jak "!"!
+prefix: "."
