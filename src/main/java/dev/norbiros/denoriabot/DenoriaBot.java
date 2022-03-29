@@ -25,7 +25,8 @@ public class DenoriaBot extends JavaPlugin {
           .setActivity(Activity.playing("mc.DENORIA.pl"))
           .addEventListeners(
             new Listener(),
-            new HelpCommand()
+            new HelpCommand(),
+            new RaceCommand()
           )
           .build();
       } catch (Exception ex) {
