@@ -24,15 +24,15 @@ public class RaceCommand extends ListenerAdapter {
             EmbedBuilder embed = new EmbedBuilder();
             embed.setTitle("Menu Pomocy Bota @DenoriaBot", null)
                     .setColor(new Color(56, 253, 21));
-            switch (args[1].toLowerCase(Locale.ROOT)) {
+            switch (args.length >= 2 ? args[1].toLowerCase(Locale.ROOT) : "empty") {
                 case "elf":
-                    embed.setDescription("Szybki, mały i dobry łucznik!1");
+                    embed.setDescription("Szybki, mały i dobry łucznik!");
                     break;
                 case "człowiek":
                     embed.setDescription("Gruby kanapowy potwór!");
                     break;
                 default:
-                    embed.setDescription("Nie znaleziono czegość jak: **" + args[1] + "**!");
+                    embed.setDescription("Nie znaleziono czegość jak: **" + (args.length >= 2 ? args[1].toLowerCase(Locale.ROOT) : "empty") + "**!");
             }
             channel.sendMessageEmbeds( embed.build() ).queue();
         }
