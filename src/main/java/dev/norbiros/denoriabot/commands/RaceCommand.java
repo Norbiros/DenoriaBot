@@ -18,7 +18,7 @@ public class RaceCommand extends ListenerAdapter {
         Message message = event.getMessage();
         String content = message.getContentRaw();
         MessageChannel channel = event.getChannel();
-        String[] args = message.toString().split("\\s+");
+        String[] args = content.split("\\s+");
 
         if (content.startsWith(DenoriaBot.getPrefix() + "rasa")) {
             EmbedBuilder embed = new EmbedBuilder();
