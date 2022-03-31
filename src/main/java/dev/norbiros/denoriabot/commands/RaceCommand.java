@@ -20,13 +20,14 @@ public class RaceCommand extends ListenerAdapter {
         MessageChannel channel = event.getChannel();
         String[] args = content.split("\\s+");
 
-        if (content.startsWith(DenoriaBot.getPrefix() + "rasa ")) {
+        if (content.startsWith(DenoriaBot.getPrefix() + "rasa ") || content.equals(DenoriaBot.getPrefix() + "rasa")) {
             EmbedBuilder embed = new EmbedBuilder();
             embed.setTitle(("Opis Ras" + (args.length >= 2 ? "y: " + args[1].toLowerCase(Locale.ROOT) : "" )), null)
                     .setColor(new Color(56, 253, 21));
             switch (args.length >= 2 ? args[1].toLowerCase(Locale.ROOT) : "empty") {
+                case "czlowiek":
                 case "człowiek":
-                    embed.setDescription("Posiada 5 serc więcej.\n Gdy zostanie mu połowa życia otrzymuje regenerację 3 na 5 sekund [Cooldown: 2 minuty]");
+                    embed.setDescription("<:minecraftheart:958978822991147078> Posiada 5 serc więcej.\n Gdy zostanie mu połowa życia otrzymuje regenerację 3 na 5 sekund [Cooldown: 2 minuty]");
                     break;
                 case "elf":
                     embed.setDescription("Posiada szybkość 1 oraz zmniejszony dmg od upadku, ale szybkość upadku pozostanie taka sama.\n Gdy zada obrażenia z łuku dostaje speed 2 na 5 sekund");
@@ -43,11 +44,12 @@ public class RaceCommand extends ListenerAdapter {
                 case "goblin":
                     embed.setDescription("Ataki nakładają truciznę 1 na 2 sek, a także dają goblinowi haste 1 na 5 sekund oraz możliwość czołganie");
                     break;
+                case "trol":
                 case "troll":
                     embed.setDescription("Ataki nakładają slowness i nausea na 1 sek, a także dają trollowi haste 2 na 5 sekund gdy ten atakuje za pomocą siekiery");
                     break;
                 default:
-                    embed.setDescription("Niestety nie znaleźliśmy takiego czegoś!\n Spróbuj wpisać:\n`-` człowiek\n`-` elf\n`-` krasnolud \n`-` demon \n `-` ork \n`-` goblin\n`-` troll")
+                    embed.setDescription("**Niestety taka rasa nie istnieje!**\n Spróbuj wpisać:\n`-` człowiek\n`-` elf\n`-` krasnolud \n`-` demon \n `-` ork \n`-` goblin\n`-` troll")
                            .setColor(new Color(255, 0, 25));
                     break;
             }
