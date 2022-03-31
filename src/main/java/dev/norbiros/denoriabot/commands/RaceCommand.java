@@ -27,26 +27,24 @@ public class RaceCommand extends ListenerAdapter {
             switch (args.length >= 2 ? args[1].toLowerCase(Locale.ROOT) : "empty") {
                 case "czlowiek":
                 case "człowiek":
-                    embed.setDescription("<:minecraftheart:958978822991147078> Posiada 5 serc więcej.\n Gdy zostanie mu połowa życia otrzymuje regenerację 3 na 5 sekund [Cooldown: 2 minuty]");
+                    embed.setDescription("<:minecraftheart:958978822991147078> Posiada 5 serc więcej.\n<:minecraftpotion:958985620326334514> Gdy zostanie mu połowa życia otrzymuje regenerację na 5 sekund!");
                     break;
                 case "elf":
-                    embed.setDescription("Posiada szybkość 1 oraz zmniejszony dmg od upadku, ale szybkość upadku pozostanie taka sama.\n Gdy zada obrażenia z łuku dostaje speed 2 na 5 sekund");
+                    embed.setDescription("<:minecraftpotion:958985620326334514> Posiada szybkość 1 oraz zmniejszony dmg od upadku.\n <:minecraftbow:958985620334706738> Gdy zada obrażenia z łuku dostaje speed 2 na 5 sekund");
                     break;
                 case "krasnolud":
-                    embed.setDescription("Posiada wytrzymałość 1 oraz możliwość czołgania.\n Gdy zablokuje cios tarczą otrzymuje wytrzymałość 2 na 5 sekund [Cooldown: 2 minuty]");
+                    embed.setDescription("Posiada wytrzymałość 1 oraz możliwość czołgania.\n <:netheritechestplate:958987494341349388> Gdy zablokuje cios tarczą otrzymuje wytrzymałość na 5 sekund!");
                     break;
                 case "demon":
-                    embed.setDescription("Posiada odporność na ogień, spowolnienie, mdłości, oślepienie, słabość, zatrucie, obumarcie.\n Jego atak nakłada obumarcie 1 na 5 sekund [Cooldown: 15 sekund]. Może chodzić po lawie. Wciskając szybko dwa razy shift może włączać lub wyłączać tą funkcję.");
+                    embed.setDescription("<:minecraftpotion:958985620326334514> Posiada odporność na ogień, spowolnienie, mdłości, oślepienie, słabość, zatrucie, obumarcie.\n<:minecraftsword:958985620594769930> Jego atak nakłada obumarcie 1 na 5 sekund [Cooldown: 15 sekund]. \n<:lavabucket:958988061012799530> Może chodzić po lawie.");
                     break;
                 case "ork":
-                    embed.setDescription("Posiada siłe 1.\n Gdy zostanie mu połowa życia otrzymuje siłę 2 na 5 sekund [Cooldown: 2 minuty]");
+                    embed.setDescription("<:minecraftsword:958985620594769930> Posiada siłe 1.\n <:minecraftheart:958978822991147078> Gdy zostanie mu połowa życia otrzymuje siłę 2 na 5 sekund!");
                     break;
                 case "goblin":
-                    embed.setDescription("Ataki nakładają truciznę 1 na 2 sek, a także dają goblinowi haste 1 na 5 sekund oraz możliwość czołganie");
-                    break;
                 case "trol":
                 case "troll":
-                    embed.setDescription("Ataki nakładają slowness i nausea na 1 sek, a także dają trollowi haste 2 na 5 sekund gdy ten atakuje za pomocą siekiery");
+                    embed.setDescription("<:minecraftheart:958978822991147078> Ataki nakładają truciznę na 2 sekundy, a także dają haste 1 na 5 sekund");
                     break;
                 default:
                     embed.setDescription("**Niestety taka rasa nie istnieje!**\n Spróbuj wpisać:\n`-` człowiek\n`-` elf\n`-` krasnolud \n`-` demon \n `-` ork \n`-` goblin\n`-` troll")
