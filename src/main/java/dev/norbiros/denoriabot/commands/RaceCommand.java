@@ -33,7 +33,7 @@ public class RaceCommand extends ListenerAdapter {
                     embed.setDescription("<:minecraftpotion:958985620326334514> Posiada szybkość 1 oraz zmniejszony dmg od upadku.\n <:minecraftbow:958985620334706738> Gdy zada obrażenia z łuku dostaje speed 2 na 5 sekund");
                     break;
                 case "krasnolud":
-                    embed.setDescription("Posiada wytrzymałość 1 oraz możliwość czołgania.\n <:netheritechestplate:958987494341349388> Gdy zablokuje cios tarczą otrzymuje wytrzymałość na 5 sekund!");
+                    embed.setDescription("<:minecraftbow:958985620334706738> Posiada wytrzymałość 1 oraz możliwość czołgania.\n <:netheritechestplate:958987494341349388> Gdy zablokuje cios tarczą otrzymuje wytrzymałość na 5 sekund!");
                     break;
                 case "demon":
                     embed.setDescription("<:minecraftpotion:958985620326334514> Posiada odporność na ogień, spowolnienie, mdłości, oślepienie, słabość, zatrucie, obumarcie.\n<:minecraftsword:958985620594769930> Jego atak nakłada obumarcie 1 na 5 sekund [Cooldown: 15 sekund]. \n<:lavabucket:958988061012799530> Może chodzić po lawie.");
@@ -46,6 +46,10 @@ public class RaceCommand extends ListenerAdapter {
                 case "troll":
                     embed.setDescription("<:minecraftheart:958978822991147078> Ataki nakładają truciznę na 2 sekundy, a także dają haste 1 na 5 sekund");
                     break;
+                case "niger":
+                    embed.setDescription("<:minecraftheart:958978822991147078> Ma efekt wytrzymałości na słońce! \nJest nie widzialny w ciemności, ponieważ jest tak czarny! ")
+                            .setTitle("Rasa Niger - Easter Egg")
+                            .setColor(new Color(255, 213, 0));
                 default:
                     embed.setDescription("**Niestety taka rasa nie istnieje!**\n Spróbuj wpisać:\n`-` człowiek\n`-` elf\n`-` krasnolud \n`-` demon \n `-` ork \n`-` goblin\n`-` troll")
                            .setColor(new Color(255, 0, 25));

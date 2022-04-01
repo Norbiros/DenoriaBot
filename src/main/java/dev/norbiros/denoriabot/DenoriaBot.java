@@ -26,7 +26,9 @@ public class DenoriaBot extends JavaPlugin {
           .addEventListeners(
             new Listener(),
             new HelpCommand(),
-            new RaceCommand()
+            new RaceCommand(),
+            new GithubCommand(),
+            new TutorialCommand()
           )
           .build();
       } catch (Exception ex) {
