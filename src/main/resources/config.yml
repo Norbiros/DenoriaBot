@@ -1,11 +1,13 @@
+#
 # Witaj w configu bota DenoriaBot!
-# Tutaj jest miejsce, gdzie możesz podać wszystkie dane, aby bot mógł działać!
+# Tutaj jest miejsce, gdzie możesz podać wszystkie dane, aby bot mógł poprawnie działać!
+#
 
 # W tym polu wpisz token bota
-# *Pamiętaj że token, jest tajny! Nie pokazuj go nikomu!*
+# * Pamiętaj że token, jest tajny! Nie podawaj go nikomu! *
 token: 
 
 # Tutaj podaj prefix bota (wszystkie komendy będą zaczynały się od tego znaku)
-# Aby uniknąć konfliktów - podaj unikatowy znak
+# Aby uniknąć konfliktów - podaj unikatowy symbol
 # Nie usuwaj "" ponieważ może to powodować bugi przy znakach jak "!"!
 prefix: "."

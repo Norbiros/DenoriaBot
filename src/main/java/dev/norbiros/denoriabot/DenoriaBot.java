@@ -4,6 +4,8 @@ import dev.norbiros.denoriabot.commands.*;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.OnlineStatus;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DenoriaBot extends JavaPlugin {
     private static DenoriaBot instance;
     private static String BOT_PREFIX;
+    private static JDA jda;
   
     @Override
     public void onEnable() {
@@ -20,16 +23,9 @@ public class DenoriaBot extends JavaPlugin {
       this.saveDefaultConfig();
       try {
         String BOT_TOKEN = this.getConfig().getString("token");
-        getLogger().info(this.getConfig().getString("prefix"));
-        JDABuilder.createDefault(BOT_TOKEN)
+        jda = JDABuilder.createDefault(BOT_TOKEN)
           .setActivity(Activity.playing("mc.DENORIA.pl"))
-          .addEventListeners(
-            new Listener(),
-            new HelpCommand(),
-            new RaceCommand(),
-            new GithubCommand(),
-            new TutorialCommand()
-          )
+          .addEventListeners( new CommandListener() )
           .build();
       } catch (Exception ex) {
         ex.printStackTrace();
@@ -40,6 +36,8 @@ public class DenoriaBot extends JavaPlugin {
     public void onDisable() {
       instance = null;
       BOT_PREFIX = null;
+      jda.getPresence().setStatus(OnlineStatus.OFFLINE);
+      jda.shutdown();
       getLogger().info("Pomyślnie wyłączono plugin DenoriaBot!");
     }
 

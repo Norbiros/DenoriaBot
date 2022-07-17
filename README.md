@@ -1,17 +1,14 @@
 # DenoriaBot
-This is discord bot, that uses JDA as main library!<br>
+This is discord bot, that uses JDA as main library.<br>
 Project is WIP. A lot of new features coming soon!
 
-Bot is made for Denoria.pl minecraft server
-## It has features as:
+Bot is made for [https://denoria.pl](Denoria.pl) minecraft server.
+## Current features
 - help command
 - information about races<br>
-- map/fiscord/github links<br>
+- map/discord/github links<br>
 
-## To do:
-- make command more OOP
+## To do
 - tickets
 - server status
-
-## Info
-I am not working on this, because server is almost dead, but maybe in future I will work on it...
+- command logs
