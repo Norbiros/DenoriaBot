@@ -5,9 +5,13 @@
 
 # W tym polu wpisz token bota
 # * Pamiętaj że token, jest tajny! Nie podawaj go nikomu! *
-token: 
+token:
 
-# Tutaj podaj prefix bota (wszystkie komendy będą zaczynały się od tego znaku)
+# W tym polu podaj id Twojejgo serwera
+# Jest to wymagane, aby slash comendy działały
+guild-id:
+
+# Tutaj podaj drugi (domyślnie jest już /) prefix bota
 # Aby uniknąć konfliktów - podaj unikatowy symbol
 # Nie usuwaj "" ponieważ może to powodować bugi przy znakach jak "!"!
 prefix: "."

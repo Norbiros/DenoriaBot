@@ -35,10 +35,6 @@ public class RaceCommand {
             case "troll":
                 embed.setDescription("<:minecraftheart:958978822991147078> Ataki nakładają truciznę na 2 sekundy, a także dają haste 1 na 5 sekund");
                 break;
-            case "niger":
-                embed.setDescription("<:minecraftheart:958978822991147078> Ma efekt wytrzymałości na słońce! \nJest nie widzialny w ciemności, ponieważ jest tak czarny! ")
-                        .setTitle("Rasa Niger - Easter Egg")
-                        .setColor(new Color(255, 213, 0));
             default:
                 embed.setDescription("**Niestety taka rasa nie istnieje!**\n Spróbuj wpisać:\n`-` człowiek\n`-` elf\n`-` krasnolud \n`-` demon \n `-` ork \n`-` goblin\n`-` troll")
                        .setColor(new Color(255, 0, 25));
