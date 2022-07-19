@@ -25,7 +25,7 @@ public class CommandListener extends ListenerAdapter {
             arguments = arguments + " " + s.getAsString();
         }
         EmbedBuilder embed = getEmbed(arguments);
-        embed.setFooter("Denoria 🦊")
+        embed.setFooter("Denoria 🦊");
         if (embed != null) {
             event.getHook().sendMessageEmbeds(embed.build()).queue();
         }

@@ -7,8 +7,8 @@ Bot is made for [https://denoria.pl](Denoria.pl) minecraft server.
 - help command
 - information about races<br>
 - map/discord/github links<br>
+- command logs<br>
 
 ## To do
 - tickets
 - server status
-- command logs
