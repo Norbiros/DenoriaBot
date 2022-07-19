@@ -4,14 +4,37 @@
 #
 
 # W tym polu wpisz token bota
-# * Pamiętaj że token, jest tajny! Nie podawaj go nikomu! *
+# * Pamiętaj, że token, jest tajny! Nie podawaj go nikomu! *
 token:
 
 # W tym polu podaj id Twojejgo serwera
 # Jest to wymagane, aby slash comendy działały
 guild-id:
 
-# Tutaj podaj drugi (domyślnie jest już /) prefix bota
-# Aby uniknąć konfliktów - podaj unikatowy symbol
+# Tutaj podaj drugi (domyślnie jest już /) prefix bota.
+# Aby uniknąć konfliktów, podaj unikatowy symbol!
 # Nie usuwaj "" ponieważ może to powodować bugi przy znakach jak "!"!
 prefix: "."
+
+# Kanał logów komend
+logs-channel-id:
+
+# Tutaj podaj wszystkie komendy, które będą logowane w kanale logs-channel-id.
+# W polu "description" możesz, użyć tagów jak:
+# - {player} - nazwa gracz
+# - {command} - komenda z argumentami
+# - {argument <liczba od 0 do max argumentów>} - podaje argument z komendy (0 to nazwa komendy)
+
+commands:
+  - command: /gamemode # Tutaj podaj komendę zaczynającą się od /
+    title: Log Komendy Gamemode # Tutuł embeda na dc (nie działają tagi)
+    description: Gracz {player} użył komendy /gamemode i zmienił tryb gry na {argument 1} # Tutaj podaj wiadomość wysyłaną w kanale (z tagami)
+    color: 21, 242, 253 # Tutaj podaj kolor RGB
+    permissions: # Tutaj podaj listę permisji, jeśli gracz ma dowolną z nich, embed zostanie wysłany na dc, lecz jeśli nie ma żadnej, nic się nie stanie
+      - minecraft.command.gamemode
+  - command: /help
+    title: Ktoś potrzebuje pomocy!
+    description: Io! Io! Gracz {player} pilnie POTRZEBUJE POMOCY!
+    color: 255, 0, 0
+    permissions:
+      - bukkit.command.help

@@ -16,8 +16,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class DenoriaBot extends JavaPlugin {
     private static DenoriaBot instance;
-     private static String BOT_PREFIX;
-    private static JDA jda;
+    private static String BOT_PREFIX;
+    public static JDA jda;
   
     @Override
     public void onEnable() {
@@ -43,6 +43,7 @@ public class DenoriaBot extends JavaPlugin {
       } catch (Exception ex) {
         ex.printStackTrace();
       }
+      getServer().getPluginManager().registerEvents(new CommandLogs(), this);
     }
 
     @Override

@@ -21,10 +21,11 @@ public class CommandListener extends ListenerAdapter {
         event.deferReply().queue();
         String arguments = event.getName() + " ";
         for (OptionMapping s : event.getOptions()) {
-            // TODO: Zaimplementować różne typy, nie tylko STRING
+            // TODO: Implement other types, not only STRING
             arguments = arguments + " " + s.getAsString();
         }
         EmbedBuilder embed = getEmbed(arguments);
+        embed.setFooter("Denoria 🦊")
         if (embed != null) {
             event.getHook().sendMessageEmbeds(embed.build()).queue();
         }
