@@ -47,7 +47,7 @@ public class VerificationCommand {
 
         embed.setTitle("Denoria.pl | Połącz Swoje Konto", null)
                 .setColor(new Color(21, 242, 253))
-                .setDescription("Twoje UUID: " + uuid + ". Twoja nazwa: " + name)
+                .setDescription("Twoje nazwa w Minecraft: " + name)
                 .setImage("https://minotar.net/avatar/" + name + ".png");
         return embed;
     }

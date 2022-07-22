@@ -9,11 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 import java.time.Instant;
 
 public class DenoriaBotCommandExecutor implements CommandExecutor {
@@ -37,14 +33,12 @@ public class DenoriaBotCommandExecutor implements CommandExecutor {
         String randomString = String.format("%06d", new Random().nextInt(999999));
 
 
-        try {
-            if (config.getCustomConfig().get("player." + uuid + ".discord-id") != null) {
+        Set<String> playerList = config.getCustomConfig().getConfigurationSection("player").getKeys(false);
+        for (String key : playerList) {
+            if (config.getCustomConfig().get("player." + key + ".uuid").toString().equalsIgnoreCase(uuid)) {
                 sender.sendMessage("Już połączyłeś swoje konto Discord!");
                 return true;
             }
-        } catch (NullPointerException ex) {
-            ex.printStackTrace();
-            return true;
         }
 
         sender.sendMessage("Twój kod do połączenia na Discordzie to: " + randomString);

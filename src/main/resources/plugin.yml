@@ -3,6 +3,7 @@ description: This is plugin that creates discord bot for minecraft server denori
 
 prefix: DenoriaBOT
 authors: [Norbiros]
+depend: [LuckPerms]
 
 version: ${project.version}
 main: dev.norbiros.denoriabot.DenoriaBot

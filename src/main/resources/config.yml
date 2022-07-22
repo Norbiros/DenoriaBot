@@ -19,6 +19,11 @@ prefix: "."
 # Kanał logów komend
 logs-channel-id:
 
+# Tutaj podaj nazwę użytkownika oraz id rangi na discordzie
+ranks:
+  - vip
+
+
 # Tutaj podaj wszystkie komendy, które będą logowane w kanale logs-channel-id.
 # W polu "description" możesz, użyć tagów jak:
 # - {player} - nazwa gracz

@@ -14,18 +14,23 @@ import net.dv8tion.jda.api.OnlineStatus;
 import org.jetbrains.annotations.NotNull;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import net.luckperms.api.LuckPerms;
 
 
 public class DenoriaBot extends JavaPlugin {
     private static DenoriaBot instance;
     private static String BOT_PREFIX;
     public static JDA jda;
+    private LuckPerms luckPerms;
 
   
     @Override
     public void onEnable() {
       instance = this;
       BOT_PREFIX = this.getConfig().getString("prefix");
+
+      this.luckPerms = getServer().getServicesManager().load(LuckPerms.class);
+      new LuckyPermsHandler(this, this.luckPerms).register();
 
       Config config = new Config();
 
