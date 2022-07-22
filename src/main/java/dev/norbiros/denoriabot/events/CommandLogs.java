@@ -1,4 +1,4 @@
-package dev.norbiros.denoriabot;
+package dev.norbiros.denoriabot.events;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

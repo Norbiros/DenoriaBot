@@ -1,4 +1,4 @@
-package dev.norbiros.denoriabot.commands;
+package dev.norbiros.denoriabot.discord.commands;
 
 import dev.norbiros.denoriabot.DenoriaBot;
 import net.dv8tion.jda.api.EmbedBuilder;

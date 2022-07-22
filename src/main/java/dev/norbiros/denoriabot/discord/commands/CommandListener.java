@@ -1,6 +1,7 @@
-package dev.norbiros.denoriabot.commands;
+package dev.norbiros.denoriabot.discord.commands;
 
 import dev.norbiros.denoriabot.DenoriaBot;
+
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -24,7 +25,7 @@ public class CommandListener extends ListenerAdapter {
             // TODO: Implement other types, not only STRING
             arguments = arguments + " " + s.getAsString();
         }
-        EmbedBuilder embed = getEmbed(arguments);
+        EmbedBuilder embed = getEmbed(arguments, event.getIdLong());
         embed.setFooter("Denoria 🦊");
         if (embed != null) {
             event.getHook().sendMessageEmbeds(embed.build()).queue();
@@ -37,13 +38,13 @@ public class CommandListener extends ListenerAdapter {
         String content = event.getMessage().getContentRaw();
         if (!content.startsWith(DenoriaBot.getPrefix())) return;
         content = content.replaceFirst(DenoriaBot.getPrefix(), "");
-        EmbedBuilder embed = getEmbed(content);
+        EmbedBuilder embed = getEmbed(content, event.getAuthor().getIdLong());
         if (embed != null) {
              event.getChannel().sendMessageEmbeds(embed.build()).queue();
         }
     }
 
-    public EmbedBuilder getEmbed(String command) {
+    public EmbedBuilder getEmbed(String command, long id) {
          EmbedBuilder embed = null;
          switch (command.split(" ")[0]) {
             case "github":
@@ -59,6 +60,9 @@ public class CommandListener extends ListenerAdapter {
             case "help":
             case "pomoc":
                 embed = HelpCommand.handleCommand(command);
+            case "połącz":
+            case "polacz":
+                embed = VerificationCommand.handleCommand(command, id);
             default:
                 break;
         }

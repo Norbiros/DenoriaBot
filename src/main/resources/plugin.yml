@@ -6,4 +6,9 @@ authors: [Norbiros]
 
 version: ${project.version}
 main: dev.norbiros.denoriabot.DenoriaBot
-softdepend: [ mcMMO ]
+
+commands:
+   polacz:
+      description: Weryfikuj swoje konto mc z kontem dc
+      usage: "&cUżycie komendy: /polacz"
+      aliases: [połącz, connect, weryfikuj, polacz-discord]

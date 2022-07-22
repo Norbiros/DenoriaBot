@@ -1,6 +1,8 @@
 package dev.norbiros.denoriabot;
 
-import dev.norbiros.denoriabot.commands.*;
+import dev.norbiros.denoriabot.discord.commands.*;
+import dev.norbiros.denoriabot.events.*;
+import dev.norbiros.denoriabot.configuration.Config;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -18,13 +20,22 @@ public class DenoriaBot extends JavaPlugin {
     private static DenoriaBot instance;
     private static String BOT_PREFIX;
     public static JDA jda;
+
   
     @Override
     public void onEnable() {
       instance = this;
       BOT_PREFIX = this.getConfig().getString("prefix");
 
+      Config config = new Config();
+
       this.saveDefaultConfig();
+      config.saveDefaultConfig();
+
+      // Clear verification data
+      config.getCustomConfig().set("verification", null);
+      config.saveCustomConfig();
+
       try {
         String BOT_TOKEN = this.getConfig().getString("token");
         jda = JDABuilder.createDefault(BOT_TOKEN)
@@ -39,11 +50,15 @@ public class DenoriaBot extends JavaPlugin {
             guild.upsertCommand("pomoc", "Dowiedz się jakie komendy ten bot posiada!").queue();
             guild.upsertCommand("github", "Kiedy wywołasz tą komendę, dostaniesz link do kodu bota!").queue();
             guild.upsertCommand("tutorial", "Poznaj informacje o denorii!").queue();
+            guild.upsertCommand("połącz", "Zweryfikuj swoje konto MC z DC!")
+                    .addOption(OptionType.STRING, "kod", "Twój kod z mc", true) // To lazy to implement int
+                    .queue();
         }
       } catch (Exception ex) {
         ex.printStackTrace();
       }
       getServer().getPluginManager().registerEvents(new CommandLogs(), this);
+      this.getCommand("polacz").setExecutor(new DenoriaBotCommandExecutor(this));
     }
 
     @Override
