@@ -75,9 +75,9 @@ public class LuckyPermsHandler {
         String userID = getDiscordId(config, user.getUsername());
         if (userID == null) return;
 
-        if (DenoriaBot.getInstance().getConfig().getStringList("ranks").contains(groupName)) {
+        if (DenoriaBot.getInstance().getConfig().getString("ranks." + groupName) != null) {
             Guild guild = plugin.jda.getGuildById(DenoriaBot.getInstance().getConfig().getLong("guild-id"));
-            Role role = guild.getRolesByName(groupName, true).get(0);
+            Role role = guild.getRoleById(DenoriaBot.getInstance().getConfig().getString("ranks." + groupName));
             if (role == null) {
                 plugin.getLogger().log(Level.SEVERE, "Role \"" + groupName + "\" doesn't exists on your discord server!");
                 return;

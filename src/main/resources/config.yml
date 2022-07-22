@@ -21,7 +21,7 @@ logs-channel-id:
 
 # Tutaj podaj nazwę użytkownika oraz id rangi na discordzie
 ranks:
-  - vip
+  vip: ID ROLI
 
 
 # Tutaj podaj wszystkie komendy, które będą logowane w kanale logs-channel-id.
