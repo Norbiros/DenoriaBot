@@ -8,7 +8,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 8
@@ -21,10 +20,10 @@ jobs:
         uses: github/codeql-action/init@v1
         with:
           languages: java
-          
+
       - name: Build with Maven
         run: mvn install
-        
+
       - uses: actions/upload-artifact@v2
         name: Upload Artifact
         with:
